@@ -18,3 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/companies', [\App\Http\Controllers\CompanyController::class, 'index']);
+Route::get('/users', [\App\Http\Controllers\UserController::class, 'index']);
+

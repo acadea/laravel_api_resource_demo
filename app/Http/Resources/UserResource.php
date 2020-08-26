@@ -20,7 +20,7 @@ class UserResource extends JsonResource
         $company = $this->whenLoaded('company');
 
         if(!($company instanceof MissingValue)){
-            data_set($append, 'company', (new CompanyResource($company))->toArray($request));
+            data_set($append, 'company', new CompanyResource($company));
         }
 
         return array_merge([

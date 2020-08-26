@@ -17,6 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/api/companies', [\App\Http\Controllers\CompanyController::class, 'index']);
-Route::get('/api/users', [\App\Http\Controllers\UserController::class, 'index']);
+
 

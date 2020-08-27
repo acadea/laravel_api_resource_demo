@@ -15,17 +15,11 @@ class UserResource extends JsonResource
      */
     public function toArray($request)
     {
-        $append = [];
-
         $company = $this->whenLoaded('company');
 
-        if(!($company instanceof MissingValue)){
-            data_set($append, 'company', new CompanyResource($company));
-        }
-
-        return array_merge([
+        return [
             'id' => $this->id,
-
-        ], $append);
+            'company' => new CompanyResource($company),
+        ];
     }
 }

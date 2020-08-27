@@ -16,9 +16,6 @@ class CompanyController extends Controller
     public function index()
     {
         $companies = Company::with(['users']);
-//        $companies = Company::all();
-
-//        return CompanyResource::collection($companies)->response();
         return CompanyResource::collection($companies->paginate(50))->response();
     }
 
@@ -47,11 +44,11 @@ class CompanyController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Company  $company
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show(Company $company)
     {
-        //
+        return (new CompanyResource($company->loadMissing(['users'])))->response();
     }
 
     /**

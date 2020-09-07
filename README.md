@@ -4,6 +4,16 @@ This repository is the source code to my YouTube lesson, watch it here: https://
 
 View this lesson on my Medium Blog: https://medium.com/@sam_ngu/avoiding-infinite-nested-relationship-loop-in-laravel-api-resource-35685898b360
 
+## Get Started
+I've included the seeder files for you to quickly test the code.
+
+Just run:
+```shell script
+composer install
+
+php artisan migrate && php artisan db:seed
+```
+
 ## Support Us
 Follow me on YouTube for more content! https://www.youtube.com/channel/UCU5RsUGkVcPM9QvFHyKm1OQ
 
